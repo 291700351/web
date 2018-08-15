@@ -1,0 +1,19 @@
+version: "3.1"
+
+services:
+
+  # Mysql Server Supper
+  mysql:
+    container_name: mysql
+    build: ./mysql
+    privileged: true
+    restart: always
+    expose: 
+      - 3306
+    ports: 
+      - 3306:3306
+    volumes:  
+      - $PWD/mysql/data:/var/lib/mysql
+      - $PWD/mysql/conf.d:/etc/mysql/conf.d
+    environment: 
+      - MYSQL_ROOT_PASSWORD=524299
