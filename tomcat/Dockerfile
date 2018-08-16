@@ -5,10 +5,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ENV JENKINS_HOME=/jenkins_home
 
 ADD ./jenkins.war /usr/local/tomcat/webapps
-
-RUN [ "chown -R root:root /jenkins_home /usr/local/tomcat/webapps /usr/local/tomcat/logs" ]
-
-
+ 
 COPY ./server.xml /usr/local/tomcat/conf/server.xml
 COPY ./tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
 COPY ./host-manager-context.xml /usr/local/tomcat/webapps/host-manager/META-INF/context.xml
