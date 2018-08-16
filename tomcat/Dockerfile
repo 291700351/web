@@ -6,7 +6,7 @@ ENV JENKINS_HOME=/jenkins_home
 
 ADD ./jenkins.war /usr/local/tomcat/webapps
 
-CMD [ "chown -R root:root /jenkins_home /usr/local/tomcat/webapps /usr/local/tomcat/logs" ]
+RUN [ "chown -R root:root /jenkins_home /usr/local/tomcat/webapps /usr/local/tomcat/logs" ]
 
 
 COPY ./server.xml /usr/local/tomcat/conf/server.xml
