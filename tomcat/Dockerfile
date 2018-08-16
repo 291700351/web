@@ -4,6 +4,8 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ENV JENKINS_HOME=/jenkins_home
 
+ADD ./jenkins.war /usr/local/tomcat/webapps
+
 
 
 COPY ./server.xml /usr/local/tomcat/conf/server.xml
